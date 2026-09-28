@@ -1,19 +1,43 @@
-# Game Session Guard 
+# Game Session Guard
 
-**Game Session Guard** (`gameguard`) is a lightweight Linux background utility written in Python that automatically optimizes system performance for gaming sessions.
-
-When a game is launched, it freezes unnecessary background applications (browsers, messaging apps), clears PageCache, and boosts the process priority of your game to ensure maximum FPS and eliminate micro-stutters. Once the game closes, all background apps are instantly restored.
+Game Session Guard is a Linux desktop utility for managing background processes during game sessions. It detects games, applies selected system optimizations, and restores suspended apps when the session ends.
 
 ## Features
 
-- **Automated & Heuristic Detection:** Detects games via built-in database and path heuristics (`/steamapps/`, `Lutris`, `PortProton`, `Vulkan`).
-- **Zero-Loss Background Freezing:** Suspends heavy background applications (`psutil.suspend()`) without closing them or losing session data.
-- **CPU Priority & RAM Cleanup:** Raises process priority (`nice -10`) and clears unneeded kernel cache (`drop_caches`).
-- **Safe State Recovery:** Automatically restores frozen processes on game exit or `Ctrl+C`.
+- A desktop settings window with editable game and background-app lists.
+- Automatic discovery of installed Steam games across the user's Steam libraries, including additional libraries configured in `libraryfolders.vdf`.
+- Game detection by Steam install directory, plus exact process-name matching for non-Steam games and emulators.
+- Optional background-app suspension, process priority boost, and kernel-cache clearing.
+- Recovery of suspended processes when the game ends or the monitor is stopped with Ctrl+C.
+- Per-user preferences and adjustable polling interval.
 
-## Installation
+Steam games are detected from the local installed-game manifests. This covers the user's installed library without maintaining a stale copy of the entire Steam catalog. Double-click a game in the dashboard to add its title as a custom process name when needed.
+
+## Requirements
+
+- Linux, Python 3, and `psutil` (installed in a private virtual environment by the installer).
+- Tkinter for the desktop window. On Debian/Ubuntu, install it with `sudo apt install python3-tk python3-venv` before running the installer.
+
+## Install
 
 ```bash
 git clone https://github.com/mars74da4p/game-session-guard.git
-chmod +x install.sh gameguard.py
+cd game-session-guard
 sudo ./install.sh
+```
+
+The installer places the application in `/opt/game-session-guard`, the command in `/usr/local/bin/gameguard`, and the system defaults in `/etc/game-session-guard/config.json`. Existing system configuration is preserved.
+
+## Run
+
+```bash
+gameguard --gui       # Open settings and control the monitor
+gameguard --start     # Monitor from the terminal
+gameguard --help      # Show command options
+```
+
+Run it as the desktop user for normal monitoring. Suspending processes is disruptive, so review the background-app list before enabling it. Raising priority or clearing kernel cache may require elevated privileges; cache clearing is off by default. When launched with `sudo`, the monitor scopes process actions to the user who invoked sudo.
+
+## Configuration
+
+The dashboard saves preferences to `~/.config/game-session-guard/config.json`. Set `GAMEGUARD_CONFIG` to use a different JSON file. `config.json` in the repository contains the initial game and background-app lists. Steam games installed after launch are picked up on the next monitor start or library refresh.

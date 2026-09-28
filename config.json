@@ -3,12 +3,27 @@
     "steam", "steamwebhelper", "heroic", "lutris", "bottles", "portproton", "galaxyclient",
     "javaw", "java", "wine", "wine64", "proton", "gamescope",
     "minecraft", "csgo", "cs2", "dota2", "fortnite", "valorant", "roblox",
-    "gta5", "cyberpunk2077", "witcher3", "apex", "pubg", "genshinimpact",
+    "gta5", "gta5.exe", "cyberpunk2077", "witcher3", "apex", "pubg", "genshinimpact",
+    "eldenring", "baldursgate3", "bg3", "stardewvalley", "terraria", "factorio", "palworld",
+    "helldivers2", "hades", "hades2", "overwatch", "leagueoflegends", "warframe", "warthunder",
+    "worldoftanks", "pathofexile", "pathofexile2", "diablo4", "reddeadredemption2", "rdr2",
+    "rust", "valheim", "ark", "subnautica", "nomanssky", "dayz", "7daystodie", "dontstarve",
+    "dontstarvetogether", "rimworld", "oxygen", "satisfactory", "factorio", "dyson", "cities",
+    "cities2", "eurotrucks2", "assettocorsa", "forza", "fh5", "f1", "beamng", "thecrew2",
+    "rainbowsix", "r6", "siege", "destiny2", "destiny", "battlefield", "bf2042", "cod",
+    "callofduty", "warzone", "xdefiant", "ffxiv", "wow", "worldofwarcraft", "eso", "guildwars2",
+    "monsterhunterworld", "monsterhunterwilds", "dragonsdogma2", "sekiro", "darksouls3", "liesofp",
+    "hollowknight", "celeste", "deadcells", "vampiresurvivors", "slaythespire", "cuphead",
+    "balatro", "undertale", "hades", "bioshock", "portal2", "left4dead2", "teamfortress2",
     "vita3k", "rpcs3", "yuzu", "ryujinx", "pcsx2", "ppsspp", "dolphin-emu", "retroarch"
   ],
   "apps_to_suspend": [
     "chrome", "chromium", "firefox", "zen", "brave", "opera", "vivaldi", "yandexbrowser", "edge",
     "telegram-desktop", "telegram", "discord", "vesktop", "webcord", "slack", "skype",
     "spotify", "vlc", "obs", "obs64", "qbittorrent", "transmission"
-  ]
+  ],
+  "suspend_apps": true,
+  "boost_priority": true,
+  "drop_cache": false,
+  "scan_interval": 3
 }
