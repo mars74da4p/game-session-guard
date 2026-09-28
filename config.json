@@ -1,0 +1,14 @@
+{
+  "target_games": [
+    "steam", "steamwebhelper", "heroic", "lutris", "bottles", "portproton", "galaxyclient",
+    "javaw", "java", "wine", "wine64", "proton", "gamescope",
+    "minecraft", "csgo", "cs2", "dota2", "fortnite", "valorant", "roblox",
+    "gta5", "cyberpunk2077", "witcher3", "apex", "pubg", "genshinimpact",
+    "vita3k", "rpcs3", "yuzu", "ryujinx", "pcsx2", "ppsspp", "dolphin-emu", "retroarch"
+  ],
+  "apps_to_suspend": [
+    "chrome", "chromium", "firefox", "zen", "brave", "opera", "vivaldi", "yandexbrowser", "edge",
+    "telegram-desktop", "telegram", "discord", "vesktop", "webcord", "slack", "skype",
+    "spotify", "vlc", "obs", "obs64", "qbittorrent", "transmission"
+  ]
+}
